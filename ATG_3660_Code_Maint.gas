@@ -1,0 +1,244 @@
+Program.Sub.ScreenSU.Start
+gui.F_Main..create
+gui.F_Main..caption("Code Maintenance")
+gui.F_Main..size(4320,1980)
+gui.F_Main..position(0,0)
+gui.F_Main..event(unload,cmdexit_click)
+gui.F_Main..alwaysontop(False)
+gui.F_Main..fontname("Arial")
+gui.F_Main..fontsize(8)
+gui.F_Main..forecolor(0)
+gui.F_Main..fontstyle(False,False,False,False,False)
+gui.F_Main..BackColor(-2147483633)
+gui.F_Main..controlbox(True)
+gui.F_Main..maxbutton(False)
+gui.F_Main..minbutton(True)
+gui.F_Main..mousepointer(0)
+gui.F_Main..moveable(True)
+gui.F_Main..sizeable(False)
+gui.F_Main..ShowInTaskBar(True)
+gui.F_Main..titlebar(True)
+gui.F_Main.cmdOpen.create(button)
+gui.F_Main.cmdOpen.caption("")
+gui.F_Main.cmdOpen.visible(True)
+gui.F_Main.cmdOpen.size(240,345)
+gui.F_Main.cmdOpen.zorder(0)
+gui.F_Main.cmdOpen.position(1315,460)
+gui.F_Main.cmdOpen.enabled(True)
+gui.F_Main.cmdOpen.fontname("Arial")
+gui.F_Main.cmdOpen.fontsize(8)
+gui.F_Main.cmdOpen.event(click,cmdopen_click)
+gui.F_Main.cmdDelete.create(button)
+gui.F_Main.cmdDelete.caption("Delete")
+gui.F_Main.cmdDelete.visible(True)
+gui.F_Main.cmdDelete.size(870,330)
+gui.F_Main.cmdDelete.zorder(0)
+gui.F_Main.cmdDelete.position(2100,1000)
+gui.F_Main.cmdDelete.enabled(True)
+gui.F_Main.cmdDelete.fontname("Arial")
+gui.F_Main.cmdDelete.fontsize(8)
+gui.F_Main.cmdDelete.event(click,cmddelete_click)
+gui.F_Main.cmdNew.create(button)
+gui.F_Main.cmdNew.caption("New")
+gui.F_Main.cmdNew.visible(True)
+gui.F_Main.cmdNew.size(870,330)
+gui.F_Main.cmdNew.zorder(0)
+gui.F_Main.cmdNew.position(1100,1000)
+gui.F_Main.cmdNew.enabled(True)
+gui.F_Main.cmdNew.fontname("Arial")
+gui.F_Main.cmdNew.fontsize(8)
+gui.F_Main.cmdNew.event(click,cmdnew_click)
+gui.F_Main.cmdExit.create(button)
+gui.F_Main.cmdExit.caption("Exit")
+gui.F_Main.cmdExit.visible(True)
+gui.F_Main.cmdExit.size(870,330)
+gui.F_Main.cmdExit.zorder(0)
+gui.F_Main.cmdExit.position(3085,1005)
+gui.F_Main.cmdExit.enabled(True)
+gui.F_Main.cmdExit.fontname("Arial")
+gui.F_Main.cmdExit.fontsize(8)
+gui.F_Main.cmdExit.event(click,cmdexit_click)
+gui.F_Main.lbl1.create(label)
+gui.F_Main.lbl1.caption("Code")
+gui.F_Main.lbl1.backstyle(0)
+gui.F_Main.lbl1.visible(True)
+gui.F_Main.lbl1.size(870,255)
+gui.F_Main.lbl1.zorder(1)
+gui.F_Main.lbl1.position(100,245)
+gui.F_Main.lbl1.enabled(True)
+gui.F_Main.lbl1.fontname("Arial")
+gui.F_Main.lbl1.fontsize(8)
+gui.F_Main.lbl1.BackColor(-2147483633)
+gui.F_Main.txtCode.create(textbox)
+gui.F_Main.txtCode.text("")
+gui.F_Main.txtCode.visible(True)
+gui.F_Main.txtCode.size(1140,315)
+gui.F_Main.txtCode.zorder(0)
+gui.F_Main.txtCode.position(85,460)
+gui.F_Main.txtCode.enabled(True)
+gui.F_Main.txtCode.fontname("Arial")
+gui.F_Main.txtCode.fontsize(8)
+gui.F_Main.txtCode.event(lostfocus,txtcode_lostfocus)
+gui.F_Main.txtCode.BackColor(-2147483643)
+gui.F_Main.lbl3.create(label)
+gui.F_Main.lbl3.caption("Description")
+gui.F_Main.lbl3.backstyle(0)
+gui.F_Main.lbl3.visible(True)
+gui.F_Main.lbl3.size(1935,255)
+gui.F_Main.lbl3.zorder(1)
+gui.F_Main.lbl3.position(2080,200)
+gui.F_Main.lbl3.enabled(True)
+gui.F_Main.lbl3.fontname("Arial")
+gui.F_Main.lbl3.fontsize(8)
+gui.F_Main.lbl3.BackColor(-2147483633)
+gui.F_Main.txtDesc.create(textbox)
+gui.F_Main.txtDesc.text("")
+gui.F_Main.txtDesc.visible(True)
+gui.F_Main.txtDesc.size(1830,315)
+gui.F_Main.txtDesc.zorder(0)
+gui.F_Main.txtDesc.position(2060,460)
+gui.F_Main.txtDesc.enabled(True)
+gui.F_Main.txtDesc.fontname("Arial")
+gui.F_Main.txtDesc.fontsize(8)
+gui.F_Main.txtDesc.BackColor(-2147483643)
+gui.F_Main.cmdSave.create(button)
+gui.F_Main.cmdSave.caption("Save")
+gui.F_Main.cmdSave.visible(True)
+gui.F_Main.cmdSave.size(870,330)
+gui.F_Main.cmdSave.zorder(0)
+gui.F_Main.cmdSave.position(100,1000)
+gui.F_Main.cmdSave.enabled(True)
+gui.F_Main.cmdSave.fontname("Arial")
+gui.F_Main.cmdSave.fontsize(8)
+gui.F_Main.cmdSave.event(click,cmdsave_click)
+gui.F_Main.txtCode.tabstop(True)
+gui.F_Main.txtCode.tabindex(1)
+gui.F_Main.cmdOpen.tabstop(True)
+gui.F_Main.cmdOpen.tabindex(2)
+gui.F_Main.txtDesc.tabstop(True)
+gui.F_Main.txtDesc.tabindex(3)
+gui.F_Main.cmdSave.tabstop(True)
+gui.F_Main.cmdSave.tabindex(6)
+gui.F_Main.cmdNew.tabstop(True)
+gui.F_Main.cmdNew.tabindex(7)
+gui.F_Main.cmdDelete.tabstop(True)
+gui.F_Main.cmdDelete.tabindex(8)
+gui.F_Main.cmdExit.tabstop(True)
+gui.F_Main.cmdExit.tabindex(9)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+
+
+Function.Intrinsic.Debug.SetScriptVersion("0.0.115","True")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Maint program for LTI comment codes in GUI.
+'This is for the LTI Code picker in the GUI.
+'Tables used are ATG_LTI_CODE
+'This program will run of the menu using a user hook
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+Gui.F_Main..Show
+
+
+Program.Sub.Main.End
+
+program.sub.cmdopen_click.start
+V.Local.sCol.Declare(String)
+V.Local.sWidth.Declare(String)
+V.Local.sFormat.Declare(String)
+
+V.Local.sret.Declare(String)
+V.Local.squery.Declare(String)
+
+F.Intrinsic.String.Split("CODE*!*DESCRIPTION","*!*",V.Local.sCol)
+F.Intrinsic.String.Split("2000*!*2000","*!*",V.Local.swidth)
+F.Intrinsic.String.Split("*!*00.0000","*!*",V.Local.sFormat)
+V.Local.squery.Set("SELECT CODE, DESCRIPTION FROM ATG_3660_LTI_CODE ORDER BY CODE")
+F.Intrinsic.UI.Browser("Select Code","conx",V.Local.squery,V.Local.sCol,V.Local.sWidth,400,400,V.Local.sFormat,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sret,<>,"***CANCEL***")
+	F.Intrinsic.string.Split(V.Local.sret,"*!*",V.Local.sret)
+	F.Intrinsic.String.Concat("SELECT * FROM ATG_3660_LTI_CODE WHERE CODE = '",V.Local.sret(0),"'",V.Local.squery)
+	F.ODBC.Connection!conx.OpenRecordsetRO("rst",V.Local.sQuery)
+	F.Intrinsic.Control.If(V.Odbc.conx!rst.EOF,=,False)
+		Gui.F_Main.txtCode.Text(V.Local.sret(0))
+		Gui.F_Main.txtDesc.Text(V.ODBC.conx!rst.FieldValTrim!DESCRIPTION)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+F.Intrinsic.Control.EndIf
+
+program.sub.cmdopen_click.end
+
+program.sub.cmddelete_click.start
+V.Local.sret.Declare(String)
+V.Local.shold.Declare(String)
+V.Local.squery.Declare(String)
+
+'check to make sure the code is not blank, if is no work done
+F.Intrinsic.Control.If(V.Screen.F_Main!txtCode.Text,=,"")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Concat("Are you sure you want to delete: ",V.Screen.F_Main!txtCode.text,V.Local.shold)
+F.Intrinsic.UI.Msgbox(V.Local.sHold,"Delete Code",4,V.Local.sret)
+
+F.Intrinsic.Control.If(V.Local.sret,=,6)
+	F.Intrinsic.string.concat("DELETE FROM ATG_3660_LTI_CODE WHERE CODE ='",V.Screen.F_Main!txtCode.Text,"'",V.Local.squery)
+	'clear out screen
+	F.ODBC.Connection!conx.Execute(V.Local.squery)
+	F.Intrinsic.Control.CallSub("cmdnew_click")
+F.Intrinsic.Control.EndIf
+
+program.sub.cmddelete_click.end
+
+program.sub.cmdexit_click.start
+F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.End
+
+program.sub.cmdexit_click.end
+
+program.sub.cmdnew_click.start
+Gui.F_Main.txtCode.Text("")
+Gui.F_Main.txtDesc.Text("")
+
+
+program.sub.cmdnew_click.end
+
+program.sub.cmdsave_click.start
+V.Local.sQuery.Declare(String)
+V.Local.shold.Declare(String)
+
+'check to make sure something is inputed as a code
+F.Intrinsic.Control.If(V.Screen.F_Main!txtCode.Text,=,"")
+	F.Intrinsic.UI.Msgbox("You must enter code.")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Concat("SELECT * FROM ATG_3660_LTI_CODE WHERE CODE = '",V.Screen.F_Main!txtCode.Text,"'",V.Local.sQuery)
+F.ODBC.Connection!conx.OpenRecordsetRW("rst",V.Local.sQuery)
+
+F.Intrinsic.Control.If(V.Odbc.conx!rst.EOf,=,True)
+	F.ODBC.conx!rst.AddNew
+	F.ODBC.conx!rst.Set!CODE(V.Screen.F_Main!txtCode.Text)
+F.Intrinsic.Control.EndIf
+
+F.ODBC.conx!rst.Set!DESCRIPTION(V.Screen.F_Main!txtDesc.Text)
+
+F.ODBC.conx!rst.Update
+F.ODBC.conx!rst.Close
+F.Intrinsic.Control.CallSub("cmdnew_click")
+
+program.sub.cmdsave_click.end
+
+program.sub.txtcode_lostfocus.start
+
+
+program.sub.txtcode_lostfocus.end
+
+
