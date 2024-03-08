@@ -1,0 +1,75 @@
+Program.Sub.ScreenSU.Start
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'LTI Code Editor
+'Uses Hook 25600 on the GUI Emp add comments screen
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+V.Local.sCol.Declare(String)
+V.Local.sWidth.Declare(String)
+V.Local.sFormat.Declare(String)
+V.Local.x.Declare(Long)
+
+V.Local.sret.Declare(String)
+V.Local.squery.Declare(String)
+V.Local.comment.Declare(String)
+V.Local.temp.Declare(String)
+V.Local.temp2.Declare(String)
+V.Local.sleft.Declare(String)
+
+
+F.Intrinsic.String.Split("CODE*!*DESCRIPTION","*!*",V.Local.sCol)
+F.Intrinsic.String.Split("2000*!*2000","*!*",V.Local.swidth)
+F.Intrinsic.String.Split("*!*00.0000","*!*",V.Local.sFormat)
+V.Local.squery.Set("SELECT CODE, DESCRIPTION FROM ATG_3660_LTI_CODE ORDER BY CODE")
+F.Intrinsic.UI.Browser("Select Code","conx",V.Local.squery,V.Local.sCol,V.Local.sWidth,400,400,V.Local.sFormat,V.Local.sRet)
+
+
+F.Intrinsic.String.Concat(V.Local.comment,V.Passed.09000,V.Local.comment)
+F.Intrinsic.String.Concat(V.Local.comment,V.Passed.09001,V.Local.comment)
+F.Intrinsic.String.Concat(V.Local.comment,V.Passed.09002,V.Local.comment)
+F.Intrinsic.String.Concat(V.Local.comment,V.Passed.09003,V.Local.comment)
+F.Intrinsic.String.Concat(V.Local.comment,V.Passed.09004,V.Local.comment)
+F.Intrinsic.String.Concat(V.Local.comment,V.Passed.09005,V.Local.comment)
+F.Intrinsic.String.Concat(V.Local.comment,V.Passed.09006,V.Local.comment)
+F.Intrinsic.String.Concat(V.Local.comment,V.Passed.09007,V.Local.comment)
+F.Intrinsic.String.Concat(V.Local.comment,V.Passed.09008,V.Local.comment)
+F.Intrinsic.String.Concat(V.Local.comment,V.Passed.09009,V.Local.comment)
+F.Intrinsic.String.Concat(V.Local.comment,V.Passed.09010,V.Local.comment)
+
+F.Intrinsic.String.RPad(V.Local.comment," ",1920,V.Local.comment)
+
+F.Intrinsic.Control.If(V.Local.sret,<>,"***CANCEL***")
+	F.Intrinsic.string.Split(V.Local.sret,"*!*",V.Local.sret)
+	F.Intrinsic.String.RPad(V.Local.sret(0)," ",30,V.Local.sret(0))
+	F.Intrinsic.String.Concat(V.Local.sret(0),V.Local.comment,V.Local.comment)
+	F.Intrinsic.String.LimitSplit(V.Local.comment,30,V.Local.sleft)
+		V.Passed.09000.set(V.Local.sleft(0))
+		V.Passed.09001.set(V.Local.sleft(1))
+		V.Passed.09002.set(V.Local.sleft(2))
+		V.Passed.09003.set(V.Local.sleft(3))
+		V.Passed.09004.set(V.Local.sleft(4))
+		V.Passed.09005.set(V.Local.sleft(5))
+		V.Passed.09006.set(V.Local.sleft(6))
+		V.Passed.09007.set(V.Local.sleft(7))
+		V.Passed.09008.set(V.Local.sleft(8))
+		V.Passed.09009.set(V.Local.sleft(9))
+		V.Passed.09010.set(V.Local.sleft(10))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.End
+
+Program.Sub.Main.End
+
+Program.Sub.Comments.Start
+${$0$}$ATG_3660_LTI_Code$}$RLK$}$4/1/2016
+${$1$}$$}$$}$0$}$25600$}$OLS014-Script-1-hook$}$4/1/2016 8:56:57 AM$}$(Program: OLG002; Screen: OLL310)
+
+Program.Sub.Comments.End
+
